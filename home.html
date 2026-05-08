@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Persona Website</title>
+</head>
+
+<body>
+    <div class="nav-bar">
+        LLM Boosted
+        <a href="history.html">
+            <div class="History">
+                <img src="images/p3history.png">
+            </div>
+        </a>
+        <div class="Logo">
+            <img src="images/p3rIcon.png">
+        </div>
+
+        <a href="guide.html">
+            <div class="Guide">
+                <img src="images/p3guide.png">
+            </div>
+        </a>
+    </div>
+
+
+
+    <div class="main-page-container">
+        <div class="main-page-ht">
+            <h2>About the Series:</h2>
+        </div>
+        <div class="main-page-mt">
+            <p>Persona 3 Reload is the latest turn-based RPG game released in the Persona series!</p>
+            <p>Persona 3 Reload is a remake of the 2006 game Persona 3, originally released for the PS2, on modern
+                consoles.</p>
+            <p>Persona 3 Reload is a turn based game similar to Pokemon in the sense that the protagonist summons
+                mythical Demons and Gods called "Personas" to fight on behalf of them.</p>
+        </div>
+        <div class="main-page-ht">
+            <h2>Story Synopsis</h2>
+        </div>
+        <div class="main-page-mt">
+            <p>In terms of story, Persona 3 is about the cycle of life and death. Motifs of death are present
+                throughout the game's dialouge, visuals, and music. You play as a high-school student who, after
+                switching to a school in a big city, falls into a mysterious phenomenon called the "Dark Hour" which
+                is a hidden hour between 11PM and 12AM where people turn into coffins and people's fear of death
+                personify into beings called "shadows." Recently people have been taken into this "Dark Hour"
+                without the potential to summon a persona (which represents the control you have over your fear of
+                death) If one does not have the power of persona, they get consumed by their shadow and become
+                lifeless husks of who they once were, consumed by their fear of death.</p>
+        </div>
+
+    </div>
+
+
+    <div class="characters-slideshow" id="character-display">
+        <div class="char-info-box">
+            <h2 id="char-name">Character Name</h2>
+            <h4 id="char-arcana">Arcana</h4>
+            <p id="char-desc">Description will appear here (5 sentences).</p>
+
+            <div class="controls">
+                <button onclick="changeChar(-1)">PREVIOUS</button>
+                <button onclick="changeChar(1)">NEXT</button>
+            </div>
+        </div>
+    </div>
+    <!--https://youtu.be/t7Tl76_PELM?si=7IjIfgaDFY3z2Ere&t=1787-->
+
+
+
+    <script>
+        const partyMembers = [
+            {
+                name: "Protagonist",
+                arcana: "The Fool",
+                desc: "The transfer student and leader of SEES who holds the Wild Card. He is the only one capable of wielding multiple Personas in battle. His journey centers around the inevitability of death and finding meaning in life. He often keeps a stoic demeanor even in the face of the Dark Hour. His initial Persona is Orpheus, the master of the lyre.",
+                bg: "images/AAAportraits/makotoAAAportrait.jpg" // Make sure these file names match your images!
+            },
+            {
+                name: "Yukari Takeba",
+                arcana: "The Lovers",
+                desc: "The second party member you get and the first person you meet in the game. Yukari joined SEES to find out more about her father who died in an accident the Kirijo Group was responsible for. Mistsuru Kirijo, the daughter of the president of the Kirijo Group, leads SEES in their expeditions. Yukari's Persona is Io and she has enhanced magic stats making her the ideal healer in your party ",
+                bg: "images/AAAportraits/yukariAAAportrait.jpg"
+            },
+            {
+                name: "Junpei Iori",
+                arcana: "The Magician",
+                desc: "The third party member you get in your party. After being found to have the potential to exist during the Dark Hour, Junpei gets recurited to be a part of SEES. As a part of your initial party, Junpei is the physical move member as he has enhanced strength stats and starts the game with high damaging physical skills. His starting Persona is Hermes, and depsite starting the game with no real reason to do anything. His character arc is all about him finding a place in life",
+                bg: "images/AAAportraits/junpeiAAAportrait.jpg"
+            },
+            {
+                name: "Akihiko Sanada",
+                arcana: "The Star",
+                desc: "Despite being one of the first people you meet and being one of the founding members of SEES like Mitsuru. Akihiko injuries himself the night you awaken to your Persona and only becomes available after Junpei. Akihiko is another physical skilled party member, but has more promise with magic spells, specifically for enemies with lightning affinaties. Akihiko is also the first party member to have a focus on stat buffs like Tarukuja which increases party member attacks. His initial Persona is Polydeuces ",
+                bg: "images/AAAportraits/akihikoAAAportrait.jpg"
+            },
+            {
+                name: "Mitsuru Kirijo",
+                arcana: "The Empress",
+                desc: "The previous leader of SEES before you joined. She was also the original navigator before Fukka joined your team. While she says her Persona has skills that help with navigation, her true ability lies in combat. With enhanced magic stats and decent accuracy. Mitsuru serves as the underdog in your party. Her spells that deal damage never end up doing too much damage but she can inflict aliements that cause enemies to act differently. For example, making an ememy scared so they waste a turn or making an enemy rage so they only use physical skills. Her starting Persona is Penthesilea and her element of choice is Ice. ",
+                bg: "images/AAAportraits/mitsuruAAAportrait.jpg"
+            },
+            {
+                name: "Fukka Yamagishi",
+                arcana: "The Priestess",
+                desc: "After shielding her best friend from a boss shadow in the lobby of tartarus. Fukka awakens to her Persona Lucia, who speciallizes in support. Because of this, Fukka ends up not actually being used in combat but instead as a naviagtor for Tartarus. Despite this sounding like it's not as useful...Fukka's abilites allow you to do things like map out a whole floor of tartarus, scan an enemy to reveal all elemental weaknesses or strengths, amd return to the start from any point. Her Theurgy, Oracle, is the only move that can be used in Battle, allowing her to either fully heal the party, refill SP, cure affinities, or grant stat buffs like attack, defense, or speed up. (What boost you get will always depend on what the party needs first.) ",
+                bg: "images/AAAportraits/fukkaAAAportrait.png"
+            },
+            {
+                name: "Aigis",
+                arcana: "The Aeon",
+                desc: "An Andriod, Aigis is a special party member as she is embedded with a Plume of Dusk. An artifact that within itself has the same will and fearlessness as someone who has the potential to exist during the dark hour. This same artifact not only is able to power aigis and allow her to exist in the Dark Hour, but also allows her the strength of Persona through the sheer will power infused into the Plume of Dusk. Labelled an Anti-Shadow Weapon, Aigis becomes much more than just a party member later on in the story. Her starting Persona is Palladion and she exceeds in physical based skills like gun and strike damage, as well as skills that increase stats in battle.",
+                bg: "images/AAAportraits/aigisAAAportrait.jpg"
+            },
+            {
+                name: "Korumaru",
+                arcana: "The Strength",
+                desc: "Another special case, Korumaru is a dog who once belonged to a priest at a nearby shrine. Korumaru once waited 3 months for his owner to return in vain as he died that day. The sheer will power of Korumaru and his bond with the preist was enough for him to exist during the Dark Hour and awaken to a Persona. Fittingly, his Persona is Cerberus the guardian of the Underworld.",
+                bg: "images/AAAportraits/korumaruAAAportrait.jpg"
+            },
+            {
+                name: "Ken Amada",
+                arcana: "The Justice",
+                desc: "The final special case for the SEES team. Ken is the youngest party member of SEES. Despite being only 10 years old in the game, he gained the will to exist during the Dark Hour when he watched his Mom get murdered on October 8th. This will to avenge his Mom's killer is what led him to awaken to his Persona, Nemesis.",
+                bg: "images/AAAportraits/kenAAAportrait.jpg"
+            },
+                        {
+                name: "Shinjiro Aragaki",
+                arcana: "The Hierophant",
+                desc: "The last party member. Shinjiro was one of the original SEES members along with Akihiko and Mitsuru. However, after a tragedy involving the death of many innocent people. Shinjiro gave up his Persona in hopes for a normal life. Unfortunetly, if someone with the potential of Persona ignores their power for too long. Their Persona will go berserk and start attack the user. This is due to the fact that the strength of heart required to wield a Persona in this game is built from your fearlessness of death. By ignoring your Persona, you actively hide away in the face of death...therefore lossing control of your Persona. When he joins the team he has the Persona Castor and he has the highest attack stat in the entire game with moves that can wipe out enemies immediately  ",
+                bg: "images/AAAportraits/shinjiAAAportrait.jpg"
+            },
+
+            // Add the rest of the 10 characters here following the same format!
+        ];
+
+        let currentIndex = 0;
+
+        function updateDisplay() {
+            const char = partyMembers[currentIndex];
+            document.getElementById('char-name').innerText = char.name;
+            document.getElementById('char-arcana').innerText = char.arcana;
+            document.getElementById('char-desc').innerText = char.desc;
+            document.getElementById('character-display').style.backgroundImage = `url(${char.bg})`;
+        }
+
+        function changeChar(direction) {
+            currentIndex += direction;
+
+            // Logic to loop back to the start or end
+            if (currentIndex >= partyMembers.length) {
+                currentIndex = 0;
+            } else if (currentIndex < 0) {
+                currentIndex = partyMembers.length - 1;
+            }
+
+            updateDisplay();
+        }
+
+        // Run this once when the page loads to show the first character
+        updateDisplay(); 
+    </script>
+
+
+</body>
+
+</html>

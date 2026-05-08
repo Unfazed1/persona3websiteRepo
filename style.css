@@ -1,0 +1,221 @@
+Body {
+    background-image: linear-gradient(to bottom, rgba(2, 0, 171, 0), rgba(2, 0, 171, 1)), url(images/p3rBackground.jpg);
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+.main-page-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: rgba(2, 0, 171, 0.7);
+    border-radius: 1%;
+    color: white;
+    margin: 100px auto 0;
+    width: min(90vw, 1000px);
+    max-width: 1000px;
+    padding: 20px;
+    height: auto;
+}
+
+.main-page-ht {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.main-page-mt {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    justify-content: center;
+}
+
+.nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    background: rgb(109, 154, 199);
+    min-height: 100px;
+    padding: 10px 20px;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.Logo,
+.History,
+.Guide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 100px;
+    margin: 0;
+}
+
+.Logo img,
+.History img,
+.Guide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.characters {
+    display: flex;
+
+}
+
+.footer {
+    display: flex;
+    background-color: rgb(2, 0, 171);
+    width: 100%;
+    justify-content: end;
+    height: 50px;
+}
+
+.footerContent {
+    margin-right: 30px;
+}
+
+
+/* THIS PART IS GOING TO BE THE CHARACTER PAGES */
+
+.characters-slideshow {
+    margin: 20px auto;
+    width: min(90vw, 1000px);
+    height: min(60vw, 520px);
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Keeps text to the side like P3 UI */
+    border: 3px solid white;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out; /* Smooth transition */
+    position: relative;
+}
+
+.char-info-box {
+    background: rgba(0, 0, 0, 0.65); /* Dark semi-transparent box */
+    color: white;
+    padding: 20px;
+    margin-left: 20px;
+    width: min(90vw, 700px);
+    max-width: 700px;
+    border-left: 5px solid #00d4ff; /* Persona 3 blue accent */
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.controls button {
+    background: white;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.controls button:hover {
+    background: #00d4ff;
+    color: white;
+}
+
+/* EVERYTHING BELOW THIS IS GOING TO BE HISTORY */
+
+Body.history {
+    background-image: linear-gradient(to bottom, rgba(2, 0, 171, .5), rgba(2, 0, 171, 1)), url(images/sociallinkP3R.jpg);
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+.history-bar,
+.guide-bar,
+.dh-bar {
+    display: flex;
+    position: sticky;
+    top: 0;
+    background: rgb(109, 154, 199);
+    min-height: 100px;
+    padding: 10px 20px;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.main-page-container-history,
+.main-page-container-guide,
+.main-page-container-dh {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 1%;
+    margin: 100px auto 0;
+    width: min(90vw, 1000px);
+    max-width: 1000px;
+    padding: 20px;
+    height: auto;
+}
+
+.main-page-container-history {
+    background: rgba(255, 255, 255, 0.7);
+    color: black;
+}
+
+.main-page-container-guide {
+    background: rgba(151, 191, 255, 0.8);
+    color: black;
+}
+
+.main-page-container-dh {
+    background: rgba(38, 106, 65, 0.8);
+    color: white;
+}
+
+.darkhour-img {
+    display: flex;
+    height: auto;
+    margin: 20px auto;
+    max-width: 90vw;
+}
+
+.logo-dh {
+    display: flex;
+    align-self: center;
+    width: 150px;
+    height: 100px;
+    justify-content: center;
+}
+
+Body.darkhour {
+    background-image: linear-gradient(to bottom, rgba(38,106,65,.8), rgba(28, 50, 37, .8)), url(images/darkhourbg.png);
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
